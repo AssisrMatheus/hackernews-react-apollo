@@ -1,0 +1,10 @@
+node_modules
+.nvmrc
+.vscode
+README.md
+.env
+.idea
+.prettierrc
+.eslintrc.json
+.git
+server

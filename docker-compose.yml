@@ -1,0 +1,48 @@
+version: '3.7'
+services:
+  database:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - netwrk
+    environment:
+      MYSQL_ROOT_PASSWORD: mysqltooR
+
+  server:
+    build: ./server
+    ports:
+      - '3001:80'
+    depends_on:
+      - database
+    networks:
+      - netwrk
+    # env_file:
+    #   - ./server/.env
+    environment:
+      PORT: 80
+      DB_URL: database
+
+  frontend:
+    build: ./
+    ports:
+      - '3000:80'
+    depends_on:
+      - server
+    networks:
+      - netwrk
+    # env_file:
+    #   - ./.env
+    environment:
+      PORT: 80
+      SERVER_URL: server
+
+volumes:
+  mysql:
+
+networks:
+  netwrk:
