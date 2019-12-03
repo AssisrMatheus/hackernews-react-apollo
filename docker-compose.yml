@@ -1,8 +1,8 @@
 version: '3.7'
 services:
   database:
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password --explicit_defaults_for_timestamp
     restart: always
     ports:
       - '3306:3306'
