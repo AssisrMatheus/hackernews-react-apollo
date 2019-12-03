@@ -5,6 +5,6 @@ WORKDIR /home/node
 RUN yarn install
 
 EXPOSE 80/tcp
-EXPOSE 3001/tcp
+EXPOSE 4000/tcp
 
-CMD yarn prisma deploy
+CMD yarn start
