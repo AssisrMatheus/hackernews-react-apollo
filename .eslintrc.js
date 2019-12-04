@@ -23,7 +23,9 @@ module.exports = {
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'react/jsx-filename-extension': 'off'
+    'react/jsx-filename-extension': 'off',
+    'react/prefer-stateless-function': 'off',
+    'jsx-a11y/anchor-is-valid': 'off'
   },
   settings: {
     react: {
